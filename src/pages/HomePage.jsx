@@ -1,16 +1,13 @@
 import React from 'react';
-import ThemeSwitcher from '../components/ThemeSwitcher';
-import LanguageSwitcher from '../components/LanguageSwitcher';
-import SearchBar from '../components/SearchBar';
-import WeatherDetails from '../components/WeatherDetails';
-
+import DescriptionCard from '../components/DescriptionCard';
+import WeatherCard from '../components/WeatherCard';
+import KoalaAdvice from '../components/KoalaAdvice';
 const HomePage = () => {
   return (
     <div>
-      <ThemeSwitcher />
-      <LanguageSwitcher />
-      <SearchBar />
-      <WeatherDetails />
+      <DescriptionCard />
+      <WeatherCard />
+      <KoalaAdvice />
     </div>
   );
 };

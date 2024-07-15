@@ -1,0 +1,45 @@
+.description-card {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto; /* Ortalamak için */
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/tree-trunk.png'); /* Ağaç gövdesi fotoğrafı */
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(50%);
+}
+
+.content {
+  z-index: 1; /* İçeriğin ağaç gövdesinin üzerine gelmesi için */
+  color: #17d443; /* Açık yeşil */
+}
+
+.home-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.home-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
