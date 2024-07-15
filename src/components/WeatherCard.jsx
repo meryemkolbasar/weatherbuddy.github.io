@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
-import styles from './WeatherCard.module.scss'; // WeatherCard için stil dosyası
+import styles from './WeatherCard.module.scss'; // Stil dosyası için import
 
 const WeatherCard = () => {
-  const [city, setCity] = useState('');
-  const [weather, setWeather] = useState(null);
+  const [stadt, setStadt] = useState('');
+  const [wetter, setWetter] = useState(null);
+  const [fehler, setFehler] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    if (city.trim() !== '') {
+    if (stadt.trim() !== '') {
       try {
-        const response = await fetch(`https://api.weatherapi.com/forecast.json?key=YOUR_API_KEY&q=${city}&days=1`);
+        const response = await fetch(`https://meryemkolbasar.github.io/weather-buddy/v1/forecast?latitude=52.52&longitude=13.41&current=weather_code,precipitation,rain,snowfall&timezone=Europe%2FBerlin&past_days=92`);
         if (!response.ok) {
-          throw new Error('City not found');
+          throw new Error('Stadt nicht gefunden');
         }
         const data = await response.json();
-        setWeather(data.current); // Örnek olarak current hava durumu verisi
-        setCity('');
+        setWetter(data.current); // Hava durumu verilerini güncelle
+        setStadt('');
+        setFehler(false);
       } catch (error) {
-        console.error('Error fetching weather:', error.message);
-        // Hata durumunda kullanıcıya bir mesaj gösterebilirsiniz
+        console.error('Fehler beim Abrufen des Wetters:', error.message);
+        setFehler(true);
       }
     }
   };
@@ -29,22 +31,25 @@ const WeatherCard = () => {
         <form onSubmit={handleSearch}>
           <input
             type="text"
-            placeholder="Enter city name"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
+            placeholder="Geben Sie den Stadtnamen ein"
+            value={stadt}
+            onChange={(e) => setStadt(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <button type="submit">Suchen</button>
         </form>
-        {city.trim() === '' && (
-          <p className={styles['instruction-text']}>Enter a city to see weather details</p>
+        {stadt.trim() === '' && (
+          <p className={styles['instruction-text']}>Geben Sie eine Stadt ein, um Wetterdetails zu sehen</p>
+        )}
+        {fehler && (
+          <p className={styles['error-text']}>Fehler beim Abrufen des Wetters. Bitte überprüfen Sie den Stadtnamen und versuchen Sie es erneut.</p>
         )}
       </div>
-      {weather && (
+      {wetter && (
         <div className={styles['weather-details']}>
           <div className={styles['background']}></div>
           <div className={styles['content']}>
-            <p className={styles['temperature']}>Temperature: {weather.temp_c}°C</p>
-            <p className={styles['condition']}>Condition: {weather.condition.text}</p>
+            <p className={styles['temperature']}>Temperatur: {wetter.temp_c}°C</p>
+            <p className={styles['condition']}>Wetterlage: {wetter.condition.text}</p>
           </div>
         </div>
       )}

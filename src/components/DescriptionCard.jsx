@@ -4,7 +4,6 @@ import styles from './DescriptionCard.module.scss'; // DescriptionCard için sti
 const DescriptionCard = () => {
   return (
     <div className={`${styles['description-card']} ${styles['circle']}`}>
-      {/* Arka plana ağaç gövdesi resmi */}
       <div className={styles['background']}></div>
       <div className={styles['content']}>
         <h1 className={styles['home-title']}>Aktuelle Wetterdaten und gesunde Lebensrat von Koala Buddy!</h1>

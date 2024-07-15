@@ -11,9 +11,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px auto; /* Ortalamak için */  
-  background-image: url('../assets/images/leaves-background.jpg'); /* Yaprak arka planı */
-  color: #a47819;
+  margin: 20px auto; 
+  background-image: url('../assets/images/leaves-background.jpg');
+  color: #a47819; 
 }
 
 .background {
@@ -29,7 +29,7 @@
 
 .content {
   z-index: 1;
- 
+  color: #333; 
   padding: 20px;
 }
 
@@ -40,4 +40,14 @@
 
 .condition {
   font-size: 18px;
+}
+
+.instruction-text {
+  font-size: 14px;
+  color: #fffefe;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #ffffff; 
 }
