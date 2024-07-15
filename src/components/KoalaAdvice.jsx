@@ -34,7 +34,7 @@ const KoalaAdvice = ({ condition }) => {
       </div>
       <div className={styles['content-container']}>
         <div className={styles['speech-bubble']}>
-          <p className={styles['typewriter']}>Koala Buddy sagt:</p>
+          <p className={styles['typewriter']}>Koala Buddy</p>
           <p className={styles['advice-text']}>{displayedText}</p>
         </div>
         <div className={styles['line']} role="img" aria-label="line">│</div>

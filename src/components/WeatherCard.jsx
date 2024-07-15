@@ -28,7 +28,7 @@ const WeatherCard = () => {
   return (
     <div className={styles['weather-card']}>
       <div className={styles['input-section']}>
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch}    >
           <input
             type="text"
             placeholder="Geben Sie den Stadtnamen ein"
