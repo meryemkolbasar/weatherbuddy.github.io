@@ -1,8 +1,3 @@
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
 .koala-advice-container {
   display: flex;
   justify-content: space-between;
@@ -12,9 +7,16 @@
   border-radius: 20px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
   background-image: url(../assets/images/wood-background.jpg);
-  color: #325007;
-  width: 1200px;
+  color: #67a412;
+  width: 1700px; /* Genişlik 1700px yerine responsive olarak 100% olarak ayarlandı */
+  height: 700px; /* Yükseklik sabit olarak 700px olarak ayarlandı, isteğinize göre değiştirilebilir */
+  position: relative; /* Pozisyon relative olarak ayarlandı */
 }
+
+.koala-video-container {
+  flex: 1; /* Video container'ın sağ tarafa gelmesini engellemek için flex 1 kaldırıldı */
+}
+
 
 video {
   width: 300px;
@@ -25,16 +27,26 @@ video {
   padding-left: 80px;  
 }
 
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* İçerik container'ını dikey yönde düzenlemek için flex-direction column olarak ayarlandı */
+  align-items: flex-start; /* İçerikleri sol tarafa hizalamak için align-items flex-start olarak ayarlandı */
+  justify-content: center; /* İçerikleri dikeyde merkeze hizalamak için justify-content center olarak ayarlandı */
+  padding-right: 440px; /* İçerik container'ının sol boşluğunu ayarlamak için padding-left 20px olarak ayarlandı */
+  position: relative; /* Pozisyon relative olarak ayarlandı */
+}
+
 .speech-bubble {
   flex-grow: 1;
   padding: 40px;
-  max-width: 400px;  
+  max-width: 400px; /* Sabit bir genişlik verildi */
 }
 
 .typewriter {
   font-size: 30px;
   font-weight: bold;
-  color: #2f5000;
+  color: #ffffff;
   margin-bottom: 10px;
   overflow: hidden;
   white-space: nowrap;
@@ -42,5 +54,17 @@ video {
 
 .advice-text {
   font-size: 18px;
-  color: #2f5000;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.line {
+  font-size: 100px;
+  text-align: center;
+  padding: 0 20px;
+  color: #461a08; 
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
 }

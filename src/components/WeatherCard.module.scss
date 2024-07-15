@@ -1,19 +1,18 @@
 .weather-card {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  height: 200px;
+  max-width: 400px; /* Maksimum genişlik ayarı */
+  height: 200px; /* Sabit yükseklik ayarı */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 20px auto; 
-  background-image: url('../assets/images/leaves-background.jpg');
-  color: #a47819; 
+  align-items: flex-end; /* İçerikleri sağa hizalamak için align-items flex-end olarak ayarlandı */
+  text-align: right; /* Metinleri sağa hizalamak için text-align right olarak ayarlandı */
+  margin: 20px auto;
+  //background-image: url('../assets/images/leaves-background.jpg'); /* Arka plan resmi eklendi */
+  color: #a47819; /* Metin rengi */
 }
 
 .background {
@@ -29,7 +28,7 @@
 
 .content {
   z-index: 1;
-  color: #333; 
+  color: #333; /* İçerik metin rengi */
   padding: 20px;
 }
 
@@ -44,10 +43,10 @@
 
 .instruction-text {
   font-size: 14px;
-  color: #fffefe;
+  color: #fffefe; /* Talimat metin rengi */
 }
 
 .error-text {
   font-size: 14px;
-  color: #ffffff; 
+  color: #ffffff; /* Hata metin rengi */
 }

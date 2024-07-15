@@ -1,16 +1,17 @@
 .description-card {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 800px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 100px #fefefe;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: auto; /* Ortalamak için */
+  margin: auto; 
+  margin-top: 450px;
 }
 
 .circle {
@@ -23,15 +24,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/images/leaves-background.jpg'); /* Ağaç gövdesi fotoğrafı */
+  background-image: url('../assets/images/leaves-background.jpg'); 
   background-size: cover;
   background-position: center;
   filter: grayscale(50%);
 }
 
 .content {
-  z-index: 1; /* İçeriğin ağaç gövdesinin üzerine gelmesi için */
-  color: #fa975d; 
+  z-index: 1;
+  color: #e97f42; 
 }
 
 .home-title {
@@ -40,6 +41,6 @@
 }
 
 .home-text {
-  font-size: 16px;
+  font-size: 23px;
   line-height: 1.5;
 }

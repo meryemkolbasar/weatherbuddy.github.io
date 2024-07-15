@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import KoalaVideo from '../assets/videos/KoalaVideo.mp4'; // KoalaVideo dosyasının doğru yolda olduğundan emin olun
 import styles from './KoalaAdvice.module.scss'; // Sass dosyası için stil import edildiği varsayılıyor
+import WeatherCard from './WeatherCard';
 
 const KoalaAdvice = ({ condition }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -21,7 +22,7 @@ const KoalaAdvice = ({ condition }) => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + fullText[charIndex]);
         setCharIndex(charIndex + 1);
-      }, 30); // Harf yazma süresi (100 ms)
+      }, 30); // Harf yazma süresi (30 ms)
       return () => clearTimeout(timeout);
     }
   }, [charIndex, fullText]);
@@ -31,10 +32,14 @@ const KoalaAdvice = ({ condition }) => {
       <div className={styles['koala-video-container']}>
         <video src={KoalaVideo} autoPlay loop muted />
       </div>
-      <div className={styles['speech-bubble']}>
-        <p className={styles['typewriter']}>Koala Buddy sagt:</p>
-        <p className={styles['advice-text']}>{displayedText}</p>
+      <div className={styles['content-container']}>
+        <div className={styles['speech-bubble']}>
+          <p className={styles['typewriter']}>Koala Buddy sagt:</p>
+          <p className={styles['advice-text']}>{displayedText}</p>
+        </div>
+        <div className={styles['line']} role="img" aria-label="line">│</div>
       </div>
+      <WeatherCard />
     </div>
   );
 };
@@ -46,7 +51,7 @@ const getAdvice = (condition) => {
         'Koala Buddy freut sich auf deine Stadtauswahl! 🌞',
         'Bitte wähle eine Stadt, um die Wetterdetails zu sehen.'
       ];
-    case 'Sommer':
+    case 'Summer':
       return [
         'Es ist ein klarer Tag! Genieße die Sonne 🌞',
         'Vergiss nicht, Sonnencreme mit LSF 50 aufzutragen, um deine Haut zu schützen! 🧴',
