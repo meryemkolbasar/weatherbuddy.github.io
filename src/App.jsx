@@ -1,11 +1,13 @@
 import React from 'react';
-import HomePage from './pages/HomePage';
+import DescriptionCard from './components/DescriptionCard';
+import KoalaAdvice from './components/KoalaAdvice';
 import './App.css'; 
 
 const App = () => {
   return (
     <div className="app app-background">
-      <HomePage />
+         <DescriptionCard />
+         <KoalaAdvice />
     </div>
   );
 };
