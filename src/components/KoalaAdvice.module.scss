@@ -2,16 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: 20px auto; /* Yatayda merkezleme */
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
   background-image: url(../assets/images/wood-background.jpg);
   color: #67a412;
-  width: 1700px; /* Genişlik 1700px yerine responsive olarak 100% olarak ayarlandı */
-  height: 700px; /* Yükseklik sabit olarak 700px olarak ayarlandı, isteğinize göre değiştirilebilir */
-  position: relative; /* Pozisyon relative olarak ayarlandı */
+  width: 1700px; /* Genişlik sabit kaldı */
+  height: 700px; /* Yükseklik sabit kaldı */
+  position: absolute; /* Sabitleme */
+  top: 50%; /* Yüksekliği %50 konumlandırma */
+  left: 50%; /* Yatayda %50 konumlandırma */
+  transform: translate(-50%, -50%); /* Gerçekten ortalamak için */
 }
+
+
 
 .koala-video-container {
   flex: 1; /* Video container'ın sağ tarafa gelmesini engellemek için flex 1 kaldırıldı */
@@ -67,4 +72,21 @@ video {
   top: 50%;
   left: 60%;
   transform: translate(-50%, -50%);
+}
+
+.button {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  background-color: #5b940b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color:   #609d0c;
 }

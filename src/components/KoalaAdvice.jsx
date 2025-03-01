@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import KoalaVideo from '../assets/videos/KoalaVideo.mp4'; // KoalaVideo dosyasının doğru yolda olduğundan emin olun
-import styles from './KoalaAdvice.module.scss'; // Sass dosyası için stil import edildiği varsayılıyor
+import KoalaVideo from '../assets/videos/KoalaVideo.mp4'; // Video dosyasının doğru yolda olduğundan emin olun
+import styles from './KoalaAdvice.module.scss'; 
 import WeatherCard from './WeatherCard';
+import { Link } from 'react-router-dom';
 
 const KoalaAdvice = ({ condition }) => {
   const [displayedText, setDisplayedText] = useState('');
-  const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
   const advice = getAdvice(condition);
@@ -13,7 +13,6 @@ const KoalaAdvice = ({ condition }) => {
 
   useEffect(() => {
     setDisplayedText('');
-    setTextIndex(0);
     setCharIndex(0);
   }, [condition]);
 
@@ -22,7 +21,7 @@ const KoalaAdvice = ({ condition }) => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + fullText[charIndex]);
         setCharIndex(charIndex + 1);
-      }, 30); // Harf yazma süresi (30 ms)
+      }, 30); 
       return () => clearTimeout(timeout);
     }
   }, [charIndex, fullText]);
@@ -39,7 +38,13 @@ const KoalaAdvice = ({ condition }) => {
         </div>
         <div className={styles['line']} role="img" aria-label="line">│</div>
       </div>
-      <WeatherCard />
+
+      {/* Sağ alt köşeye konumlandırılmış WeatherCard */}
+      <div className={styles['weather-container']}>
+        <WeatherCard />
+      </div>
+
+      <Link to="/" className={styles['button']}>DescriptionCard'a Git</Link>
     </div>
   );
 };
